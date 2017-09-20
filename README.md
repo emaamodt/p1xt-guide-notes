@@ -1,5 +1,5 @@
 # p1xt-guide-notes
-Notes on p1xt's Computer Science and Web Development guide.
+Notes on p1xt's awesome [Computer Science and Web Development Guide](https://github.com/P1xt/p1xt-guides/blob/master/cs-wd.md)!
 
 ## Tier 1 - getting started
 - [X]  Book: [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)    
