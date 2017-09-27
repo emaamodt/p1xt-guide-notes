@@ -1,0 +1,31 @@
+Everything is not an object.
+	NULL is not an object - that's a bug that says null is a typeof object
+
+Objects
+	Arrays
+	Functions
+
+
+Built-In Objects
+	String
+	Number
+	Boolean
+	Object
+	Function
+	Array
+	Date
+	RegExp
+	Error
+
+	Can all be used as constructors (can use "new" operator)
+
+Primitives are temporarily coerced to objects when properties or methods are called on them
+
+Weird exceptions:
+	null and undefined have no object wrapper form. 
+	Date values can only be created  w/ constructed object form
+	Errors are also objects
+
+RegExp, Array, Object, Function are all functions regardless of which form is used - USE LITERAL UNLESS YOU NEED EXTRA OPTIONS
+
+There are no methods. Just functions. The terms are interchangeable.
