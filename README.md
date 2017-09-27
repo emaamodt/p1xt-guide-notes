@@ -25,7 +25,7 @@ Notes on p1xt's awesome [Computer Science and Web Development Guide](https://git
 - [ ]  Course: [How to Code: Complex Data](https://www.edx.org/course/how-code-complex-data-ubcx-htc2x)    
 - [ ]  Course: [Software Construction: Data Abstraction](https://www.edx.org/course/software-construction-data-abstraction-ubcx-softconst1x)
 - [ ]  Book:  [DOM Enlightenment](http://domenlightenment.com/)    
-- [ ]  Project:  Simon Game from the frontend section of FCC    
+- [X]  Project:  Simon Game from the frontend section of FCC    
 - [ ]  Project:  Complete all Classic Puzzles - Easy on [CodinGame](https://www.codingame.com/) in JavaScript        
 - [ ] Course - [Programming for the Web with JavaScript](https://www.edx.org/course/programming-web-javascript-pennx-sd4x) on edX or [M101JS: MongoDB for Node.js Developers](https://university.mongodb.com/courses/M101JS/about) on MongoDB University (or both, your choice)  
 - [ ]  The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want. 
