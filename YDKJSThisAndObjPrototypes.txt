@@ -29,3 +29,10 @@ Weird exceptions:
 RegExp, Array, Object, Function are all functions regardless of which form is used - USE LITERAL UNLESS YOU NEED EXTRA OPTIONS
 
 There are no methods. Just functions. The terms are interchangeable.
+
+There is no duplicate function!
+	WORKAROUNDS:
+		JSON safe objects can be duplicated with:
+			var newObj = JSON.parse( JSON.stringify( someObj ) );
+
+		For shallow copies, use ES6 Object.Assign
