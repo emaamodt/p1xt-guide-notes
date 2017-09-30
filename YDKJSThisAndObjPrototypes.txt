@@ -36,3 +36,27 @@ There is no duplicate function!
 			var newObj = JSON.parse( JSON.stringify( someObj ) );
 
 		For shallow copies, use ES6 Object.Assign
+
+GETTERS AND SETTERS
+
+	Always declare both getter and setter. Having only one leads to unexpected behavior.
+
+ITERATORs
+	The 'in' operator checks for the existence of a property name inside a container, not a the existence of a value.
+
+	for...in - loops have weird results on arrays. Use only on objects.
+
+	Order of iteration over object's properties is not guaranteed.
+
+	for...of - loops over actual values in array instead of indices (ES6)
+		EX) var myArray = [ 1, 2, 3 ];
+
+				for (var v of myArray) {
+					console.log( v );
+				}
+	You can get the @@iterator internal property of an object using an ES6 Symbol: Symbol.iterator
+		Note: It is a function that returns the  iterator object, not the iterator object itself!
+
+		regular objects don't have a built-in @@iterator, but arrays do.
+
+		You can define an @@iterator for the object with Object.defineProperty() or [Symbol.iterator]: function(){ /* .. */ }
