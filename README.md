@@ -4,7 +4,7 @@ Notes on p1xt's awesome [Computer Science and Web Development Guide](https://git
 ## Tier 1 - getting started
 - [X]  Book: [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)    
 - [X]  Book: [You Don't Know JS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures)  
-- [ ]  Book: [You Don't Know JS: this & Object Prototypes](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes)     
+- [X]  Book: [You Don't Know JS: this & Object Prototypes](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes)     
 - [ ]  Course: [Learn to Code HTML & CSS](http://learn.shayhowe.com/html-css/)    
 - [ ]  Project: Clone [this](https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2) online resume template 
 - [ ]  Course: [Introduction to Computer Science - CS50](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x#!)
