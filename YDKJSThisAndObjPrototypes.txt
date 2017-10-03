@@ -60,3 +60,41 @@ ITERATORs
 		regular objects don't have a built-in @@iterator, but arrays do.
 
 		You can define an @@iterator for the object with Object.defineProperty() or [Symbol.iterator]: function(){ /* .. */ }
+
+PROTOTYPES
+	[[Prototype]] defines where the [[GET] operation should look when trying to access a property that the object doesn't have.
+
+	All objects have built in Object.prototype at the top of the prototype chain.
+
+	No copies are made in Javascript. Objects end up linked to each other through the Prototype chain instead.
+
+	delegation instead of inheritance
+
+	.isPrototypeOf(); - checks to see if one object appears anywhere in another object's prototype chain
+	ex) b.isPrototypeOf(c);
+
+	Object.getPrototypeOf(); - retrieves the prototype of the object
+
+	most but all browsers have a.__proto__ === Foo.prototype; // true
+		This wasn't standardized until ES6
+		looks like a property, but is more like a getter/setter
+
+	****USE Object.create(); to create a new object linked to a specified object. Gives us all the power of delegation w/o the mess.*****
+
+		EX)
+			var foo = {
+				something: function() {
+					console.log( "Tell me something good..." );
+				}
+			};
+
+			var bar = Object.create( foo );
+
+			bar.something(); // Tell me something good...
+
+		Note: Object.create(NULL) can be used to create dictionaries.
+		Can use polyfill for pre-ES5 environments
+
+		Can add property names to new object, but not with the polyfill.
+
+BEHAVIOR DELEGATION
