@@ -15,7 +15,7 @@ HTML
 	Special character endcodings: http://copypastecharacter.com/
 
 CSS
-	CSS Resets - CSS resets take every common HTML element with a predefined style and provide one unified style for all browsers. These resets generally involve removing any sizing, margins, paddings, or additional styles and toning these values down.
+	Resets - CSS resets take every common HTML element with a predefined style and provide one unified style for all browsers. These resets generally involve removing any sizing, margins, paddings, or additional styles and toning these values down.
 
 	Basic: http://meyerweb.com/eric/tools/css/reset/
 	Advanced: http://necolas.github.io/normalize.css/
