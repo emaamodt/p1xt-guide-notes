@@ -4,7 +4,8 @@ GITHUB
 	Basics
 
 		Switch to workspace first!
-
+		
+		Make sure yuou have latest updates: $ git pull origin master
 		To clone repo: $ git clone git@github.com:Kornil/simple-react-app.git 
 		DO NOT work in master
 
