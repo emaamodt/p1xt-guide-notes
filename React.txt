@@ -1,0 +1,54 @@
+REACT NOTES
+
+Prop types 
+	Set the type of props if you know it.
+	Throws a warning message.
+
+	EX) MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
+
+	Note: As of React v15.5.0, PropTypes is imported independently from React, like this:
+
+	import React, { PropTypes } from 'react';
+
+Accessing Props with ES6 Class Components
+ -Use "this"
+ EX) {this.props.data}
+
+Stateless functional component: any function which accepts props and returns JSX
+Stateless component: class that extends React.Component, but does not use internal state
+Stateful component (AKA "components" or "react components"): any component that maintains its own internal state
+
+-Minimize stateful components to limit statefulness to specific parts of application
+
+EX of stateless components and Stateless functional components
+	const Items = (props) => {
+	  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+	};
+
+	// change code below this line
+	Items.propTypes = {quantity: PropTypes.number.isRequired}
+	// change code above this line
+
+	Items.defaultProps = {
+	  quantity: 0
+	};
+
+	class ShoppingCart extends React.Component {
+	  constructor(props) {
+	    super(props);
+	  }
+	  render() {
+	    return <Items />
+	  }
+	};
+
+State: data your app needs to know about that can change over time
+
+CREATE A STATE
+	declare a state property on the component class in its constructor
+	must set the state property to a Javascript object
+
+	this.state = {
+  		name: 'Emily'
+	}
+	
