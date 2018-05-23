@@ -52,3 +52,33 @@ CREATE A STATE
   		name: 'Emily'
 	}
 	
+	component will always have access to data in state in its render() method using this.state
+
+	to access a state value w/in the return of the render method, use {}
+		ex) <h1>{this.state.name}</h1>
+	Can also render state in the render section before return
+		ex) class MyComponent extends React.Component {
+			  constructor(props) {
+			    super(props);
+			    this.state = {
+			      name: 'freeCodeCamp'
+			    }
+			  }
+			  render() {
+			    // change code below this line
+			    const name = this.state.name;
+			    // change code above this line
+			    return (
+			      <div>
+			        { /* change code below this line */ }
+			        <h1>{name}</h1>
+			        { /* change code above this line */ }
+			      </div>
+			    );
+			  }
+			};
+			
+	-virtual DOM keeps track of changes, re-renders components when state updates
+
+	-state is encapsulated/local to the component unless you pass state data to a child component as props
+
