@@ -157,3 +157,237 @@ CREATE A STATE
 	    }
 	  }
 	};
+
+- Write a simple counter
+		class Counter extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	      count: 0
+	    };
+	    // change code below this line
+	    this.increment = this.increment.bind(this)
+	    this.decrement = this.decrement.bind(this)
+	    this.reset = this.reset.bind(this)
+	    // change code above this line
+	  }
+	  // change code below this line
+	  increment() {
+	    this.setState({
+	      count: this.state.count + 1
+	    });   
+	  }
+
+	  decrement() {
+	    this.setState({
+	      count: this.state.count - 1
+	    });
+	  }
+
+	  reset() {
+	    this.setState({
+	      count: 0
+	    });
+	  }
+	  // change code above this line
+	  render() {
+	    return (
+	      <div>
+	        <button className='inc' onClick={this.increment}>Increment!</button>
+	        <button className='dec' onClick={this.decrement}>Decrement!</button>
+	        <button className='reset' onClick={this.reset}>Reset</button>
+	        <h1>Current Count: {this.state.count}</h1>
+	      </div>
+	    );
+	  }
+};
+
+CONTROLLED INPUT
+	Form elemends (input, textarea) maintain state in DOM as the user types. Can move this state into the component's state.
+	User's input becomes part of application state. React controls value of input field.
+
+	EX)
+	class ControlledInput extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	      input: ''
+	    };
+	    // change code below this line
+	    this.handleChange = this.handleChange.bind(this)
+	    // change code above this line
+	  }
+	  // change code below this line
+	  handleChange(event) {
+	    this.setState({
+	      input: event.target.value
+	    });
+	  }
+
+	  // change code above this line
+	  render() {
+	    return (
+	      <div>
+	        { /* change code below this line */}
+	        <input value={this.state.input} onChange={this.handleChange}></input>
+	        { /* change code above this line */}
+	        <h4>Controlled Input:</h4>
+	        <p>{this.state.input}</p>
+	      </div>
+	    );
+	  }
+	};
+
+	-Can also do the same with the HTML form element
+	EX)
+		class MyForm extends React.Component {
+		  constructor(props) {
+		    super(props);
+		    this.state = {
+		      input: '',
+		      submit: ''
+		    };
+		    this.handleChange = this.handleChange.bind(this);
+		    this.handleSubmit = this.handleSubmit.bind(this);
+		  }
+		  handleChange(event) {
+		    this.setState({
+		      input: event.target.value
+		    });
+		  }
+		  handleSubmit(event) {
+		    // change code below this line
+		    this.setState({
+		      submit: this.state.input
+		    });
+		    event.preventDefault();
+		    // change code above this line
+		  }
+		  render() {
+		    return (
+		      <div>
+		        <form onSubmit={this.handleSubmit}>
+		          { /* change code below this line */ }
+		          <input value={this.state.input} onChange={this.handleChange}></input>
+		          { /* change code above this line */ }
+		          <button type='submit'>Submit!</button>
+		        </form>
+		        { /* change code below this line */ }
+		          <h1>{this.state.submit}</h1>
+		        { /* change code above this line */ }
+		      </div>
+		    );
+		  }
+		};
+
+-Pass State as Props to Child Components
+	-unidirectional flow (parent --> child)
+	-Child components only receive state data they need
+	-Complex stateful apps can be broken down into one or a few stateful components
+
+	class MyApp extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	      name: 'CamperBot'
+	    }
+	  }
+	  render() {
+	    return (
+	       <div>
+	         <Navbar name={this.state.name} />
+	       </div>
+	    );
+	  }
+	};
+
+	class Navbar extends React.Component {
+	  constructor(props) {
+	    super(props);
+	  }
+	  render() {
+	    return (
+	    <div>
+	      <h1>Hello, my name is: {this.props.name} </h1>
+	    </div>
+	    );
+	  }
+	};
+
+PASS CALLBACK AS PROPS
+	-You can also pass handler functions or methods to child components just like regular props
+
+	class MyApp extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	      inputValue: ''
+	    }
+	    this.handleChange = this.handleChange.bind(this);
+	  }
+	  handleChange(event) {
+	    this.setState({
+	      inputValue: event.target.value
+	    });
+	  }
+	  render() {
+	    return (
+	       <div>
+	        { /* change code below this line */ }
+	        <GetInput input={this.state.inputValue} handleChange={this.handleChange}/>
+
+	        <RenderInput input={this.state.inputValue} />
+
+	        { /* change code above this line */ }
+	       </div>
+	    );
+	  }
+	};
+
+	class GetInput extends React.Component {
+	  constructor(props) {
+	    super(props);
+	  }
+	  render() {
+	    return (
+	      <div>
+	        <h3>Get Input:</h3>
+	        <input
+	          value={this.props.input}
+	          onChange={this.props.handleChange}/>
+	      </div>
+	    );
+	  }
+	};
+
+	class RenderInput extends React.Component {
+	  constructor(props) {
+	    super(props);
+	  }
+	  render() {
+	    return (
+	      <div>
+	        <h3>Input Render:</h3>
+	        <p>{this.props.input}</p>
+	      </div>
+	    );
+	  }
+	};
+
+LIFECYCLE METHODS/LIFECYCLE HOOKS
+	-perform actions at specific points in lifecycle of component
+
+	componentWillMount() - Called before render() when component is being mounted to DOM
+
+	componentDidMount() - for API calls or calls to server.
+		-setState() re-renders component
+
+	componentWillReceiveProps()
+
+	shouldComponentUpdate()
+
+	componentWillUpdate()
+
+	componentDidUpdate()
+
+	componentWillUnmount()
